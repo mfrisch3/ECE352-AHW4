@@ -1,0 +1,1220 @@
+Analysis & Synthesis report for AHW3
+Thu Nov  2 14:36:11 2023
+Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Port Connectivity Checks: "time_reg:iTR|div3:iHR10|div3Comb:div3_comb|FA:incFA[3]"
+ 13. Port Connectivity Checks: "time_reg:iTR|div3:iHR10|div3Comb:div3_comb|FA:incFA[2]"
+ 14. Port Connectivity Checks: "time_reg:iTR|div3:iHR10|div3Comb:div3_comb|FA:incFA[1]"
+ 15. Port Connectivity Checks: "time_reg:iTR|div3:iHR10|div3Comb:div3_comb|FA:incFA[0]"
+ 16. Port Connectivity Checks: "time_reg:iTR|div3:iHR10"
+ 17. Port Connectivity Checks: "time_reg:iTR|div6:iSEC10|div6Comb:div6_comb|FA:iFA[3]"
+ 18. Port Connectivity Checks: "time_reg:iTR|div6:iSEC10|div6Comb:div6_comb|FA:iFA[2]"
+ 19. Port Connectivity Checks: "time_reg:iTR|div6:iSEC10|div6Comb:div6_comb|FA:iFA[1]"
+ 20. Port Connectivity Checks: "time_reg:iTR|div6:iSEC10|div6Comb:div6_comb|FA:iFA[0]"
+ 21. Port Connectivity Checks: "time_reg:iTR|div10:iHUND|d_en_ff:ENflipflop1[0]|d_ff:flipflop1"
+ 22. Port Connectivity Checks: "time_reg:iTR|div10:iHUND|div10Comb:div10_comb|FA:iFA[3]"
+ 23. Port Connectivity Checks: "time_reg:iTR|div10:iHUND|div10Comb:div10_comb|FA:iFA[2]"
+ 24. Port Connectivity Checks: "time_reg:iTR|div10:iHUND|div10Comb:div10_comb|FA:iFA[1]"
+ 25. Port Connectivity Checks: "time_reg:iTR|div10:iHUND|div10Comb:div10_comb|FA:iFA[0]"
+ 26. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[18]"
+ 27. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[17]"
+ 28. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[16]"
+ 29. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[15]"
+ 30. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[14]"
+ 31. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[13]"
+ 32. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[12]"
+ 33. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[11]"
+ 34. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[10]"
+ 35. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[9]"
+ 36. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[8]"
+ 37. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[7]"
+ 38. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[6]"
+ 39. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[5]"
+ 40. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[4]"
+ 41. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[3]"
+ 42. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[2]"
+ 43. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[1]"
+ 44. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[0]"
+ 45. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[18]"
+ 46. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[17]"
+ 47. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[16]"
+ 48. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[15]"
+ 49. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[14]"
+ 50. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[13]"
+ 51. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[12]"
+ 52. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[11]"
+ 53. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[10]"
+ 54. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[9]"
+ 55. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[8]"
+ 56. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[7]"
+ 57. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[6]"
+ 58. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[5]"
+ 59. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[4]"
+ 60. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[3]"
+ 61. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[2]"
+ 62. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[1]"
+ 63. Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[0]"
+ 64. Port Connectivity Checks: "time_reg:iTR"
+ 65. Port Connectivity Checks: "rise_edge_detect:iKEY0|d_ff:flipflop3"
+ 66. Port Connectivity Checks: "rise_edge_detect:iKEY0|d_ff:flipflop2"
+ 67. Port Connectivity Checks: "rise_edge_detect:iKEY0|d_ff:flipflop1"
+ 68. Post-Synthesis Netlist Statistics for Top Partition
+ 69. Elapsed Time Per Partition
+ 70. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Nov  2 14:36:11 2023          ;
+; Quartus Prime Version              ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
+; Revision Name                      ; AHW3                                           ;
+; Top-level Entity Name              ; AHW3                                           ;
+; Family                             ; Cyclone IV E                                   ;
+; Total logic elements               ; 157                                            ;
+;     Total combinational functions  ; 149                                            ;
+;     Dedicated logic registers      ; 65                                             ;
+; Total registers                    ; 65                                             ;
+; Total pins                         ; 97                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; AHW3               ; AHW3               ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                          ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                      ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
+; FA.sv                            ; yes             ; User SystemVerilog HDL File  ; C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/FA.sv               ;         ;
+; AHW3.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv             ;         ;
+; time_reg.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/time_reg.sv         ;         ;
+; segGdec.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/segGdec.sv          ;         ;
+; segFdec.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/segFdec.sv          ;         ;
+; segEdec.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/segEdec.sv          ;         ;
+; segDdec.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/segDdec.sv          ;         ;
+; segCdec.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/segCdec.sv          ;         ;
+; segBdec.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/segBdec.sv          ;         ;
+; segAdec.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/segAdec.sv          ;         ;
+; rise_edge_detect.sv              ; yes             ; User SystemVerilog HDL File  ; C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/rise_edge_detect.sv ;         ;
+; div10Comb.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/div10Comb.sv        ;         ;
+; div10.sv                         ; yes             ; User SystemVerilog HDL File  ; C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/div10.sv            ;         ;
+; div6Comb.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/div6Comb.sv         ;         ;
+; div6.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/div6.sv             ;         ;
+; div3Comb.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/div3Comb.sv         ;         ;
+; div3.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/div3.sv             ;         ;
+; d_ff.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/d_ff.sv             ;         ;
+; d_en_ff.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/d_en_ff.sv          ;         ;
+; clkdivComb.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/clkdivComb.sv       ;         ;
+; clkdiv4096.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/clkdiv4096.sv       ;         ;
+; clkdiv.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/clkdiv.sv           ;         ;
+; bcd7seg.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/bcd7seg.sv          ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 157          ;
+;                                             ;              ;
+; Total combinational functions               ; 149          ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 62           ;
+;     -- 3 input functions                    ; 53           ;
+;     -- <=2 input functions                  ; 34           ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 144          ;
+;     -- arithmetic mode                      ; 5            ;
+;                                             ;              ;
+; Total registers                             ; 65           ;
+;     -- Dedicated logic registers            ; 65           ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 97           ;
+;                                             ;              ;
+; Embedded Multiplier 9-bit elements          ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; SW[17]~input ;
+; Maximum fan-out                             ; 66           ;
+; Total fan-out                               ; 834          ;
+; Average fan-out                             ; 2.04         ;
++---------------------------------------------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                   ;
++-----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                  ; Entity Name      ; Library Name ;
++-----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+------------------+--------------+
+; |AHW3                             ; 149 (0)             ; 65 (0)                    ; 0           ; 0            ; 0       ; 0         ; 97   ; 0            ; |AHW3                                                                ; AHW3             ; work         ;
+;    |bcd7seg:iBCD0|                ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD0                                                  ; bcd7seg          ; work         ;
+;       |segAdec:iA|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD0|segAdec:iA                                       ; segAdec          ; work         ;
+;       |segBdec:iB|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD0|segBdec:iB                                       ; segBdec          ; work         ;
+;       |segCdec:iC|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD0|segCdec:iC                                       ; segCdec          ; work         ;
+;       |segDdec:iD|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD0|segDdec:iD                                       ; segDdec          ; work         ;
+;       |segEdec:iE|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD0|segEdec:iE                                       ; segEdec          ; work         ;
+;       |segFdec:iF|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD0|segFdec:iF                                       ; segFdec          ; work         ;
+;       |segGdec:iG|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD0|segGdec:iG                                       ; segGdec          ; work         ;
+;    |bcd7seg:iBCD1|                ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD1                                                  ; bcd7seg          ; work         ;
+;       |segAdec:iA|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD1|segAdec:iA                                       ; segAdec          ; work         ;
+;       |segBdec:iB|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD1|segBdec:iB                                       ; segBdec          ; work         ;
+;       |segCdec:iC|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD1|segCdec:iC                                       ; segCdec          ; work         ;
+;       |segDdec:iD|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD1|segDdec:iD                                       ; segDdec          ; work         ;
+;       |segEdec:iE|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD1|segEdec:iE                                       ; segEdec          ; work         ;
+;       |segFdec:iF|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD1|segFdec:iF                                       ; segFdec          ; work         ;
+;       |segGdec:iG|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD1|segGdec:iG                                       ; segGdec          ; work         ;
+;    |bcd7seg:iBCD2|                ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD2                                                  ; bcd7seg          ; work         ;
+;       |segAdec:iA|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD2|segAdec:iA                                       ; segAdec          ; work         ;
+;       |segBdec:iB|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD2|segBdec:iB                                       ; segBdec          ; work         ;
+;       |segCdec:iC|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD2|segCdec:iC                                       ; segCdec          ; work         ;
+;       |segDdec:iD|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD2|segDdec:iD                                       ; segDdec          ; work         ;
+;       |segEdec:iE|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD2|segEdec:iE                                       ; segEdec          ; work         ;
+;       |segFdec:iF|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD2|segFdec:iF                                       ; segFdec          ; work         ;
+;       |segGdec:iG|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD2|segGdec:iG                                       ; segGdec          ; work         ;
+;    |bcd7seg:iBCD3|                ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD3                                                  ; bcd7seg          ; work         ;
+;       |segAdec:iA|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD3|segAdec:iA                                       ; segAdec          ; work         ;
+;       |segBdec:iB|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD3|segBdec:iB                                       ; segBdec          ; work         ;
+;       |segCdec:iC|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD3|segCdec:iC                                       ; segCdec          ; work         ;
+;       |segDdec:iD|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD3|segDdec:iD                                       ; segDdec          ; work         ;
+;       |segEdec:iE|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD3|segEdec:iE                                       ; segEdec          ; work         ;
+;       |segFdec:iF|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD3|segFdec:iF                                       ; segFdec          ; work         ;
+;       |segGdec:iG|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD3|segGdec:iG                                       ; segGdec          ; work         ;
+;    |bcd7seg:iBCD4|                ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD4                                                  ; bcd7seg          ; work         ;
+;       |segAdec:iA|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD4|segAdec:iA                                       ; segAdec          ; work         ;
+;       |segBdec:iB|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD4|segBdec:iB                                       ; segBdec          ; work         ;
+;       |segCdec:iC|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD4|segCdec:iC                                       ; segCdec          ; work         ;
+;       |segDdec:iD|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD4|segDdec:iD                                       ; segDdec          ; work         ;
+;       |segEdec:iE|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD4|segEdec:iE                                       ; segEdec          ; work         ;
+;       |segFdec:iF|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD4|segFdec:iF                                       ; segFdec          ; work         ;
+;       |segGdec:iG|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD4|segGdec:iG                                       ; segGdec          ; work         ;
+;    |bcd7seg:iBCD5|                ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD5                                                  ; bcd7seg          ; work         ;
+;       |segAdec:iA|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD5|segAdec:iA                                       ; segAdec          ; work         ;
+;       |segBdec:iB|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD5|segBdec:iB                                       ; segBdec          ; work         ;
+;       |segCdec:iC|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD5|segCdec:iC                                       ; segCdec          ; work         ;
+;       |segDdec:iD|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD5|segDdec:iD                                       ; segDdec          ; work         ;
+;       |segEdec:iE|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD5|segEdec:iE                                       ; segEdec          ; work         ;
+;       |segFdec:iF|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD5|segFdec:iF                                       ; segFdec          ; work         ;
+;       |segGdec:iG|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD5|segGdec:iG                                       ; segGdec          ; work         ;
+;    |bcd7seg:iBCD6|                ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD6                                                  ; bcd7seg          ; work         ;
+;       |segAdec:iA|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD6|segAdec:iA                                       ; segAdec          ; work         ;
+;       |segBdec:iB|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD6|segBdec:iB                                       ; segBdec          ; work         ;
+;       |segCdec:iC|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD6|segCdec:iC                                       ; segCdec          ; work         ;
+;       |segDdec:iD|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD6|segDdec:iD                                       ; segDdec          ; work         ;
+;       |segEdec:iE|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD6|segEdec:iE                                       ; segEdec          ; work         ;
+;       |segFdec:iF|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD6|segFdec:iF                                       ; segFdec          ; work         ;
+;       |segGdec:iG|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD6|segGdec:iG                                       ; segGdec          ; work         ;
+;    |bcd7seg:iBCD7|                ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD7                                                  ; bcd7seg          ; work         ;
+;       |segAdec:iA|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD7|segAdec:iA                                       ; segAdec          ; work         ;
+;       |segCdec:iC|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD7|segCdec:iC                                       ; segCdec          ; work         ;
+;       |segFdec:iF|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|bcd7seg:iBCD7|segFdec:iF                                       ; segFdec          ; work         ;
+;    |rise_edge_detect:iKEY0|       ; 1 (0)               ; 3 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|rise_edge_detect:iKEY0                                         ; rise_edge_detect ; work         ;
+;       |d_ff:flipflop1|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|rise_edge_detect:iKEY0|d_ff:flipflop1                          ; d_ff             ; work         ;
+;       |d_ff:flipflop2|            ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|rise_edge_detect:iKEY0|d_ff:flipflop2                          ; d_ff             ; work         ;
+;       |d_ff:flipflop3|            ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|rise_edge_detect:iKEY0|d_ff:flipflop3                          ; d_ff             ; work         ;
+;    |rise_edge_detect:iKEY1|       ; 1 (0)               ; 3 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|rise_edge_detect:iKEY1                                         ; rise_edge_detect ; work         ;
+;       |d_ff:flipflop1|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|rise_edge_detect:iKEY1|d_ff:flipflop1                          ; d_ff             ; work         ;
+;       |d_ff:flipflop2|            ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|rise_edge_detect:iKEY1|d_ff:flipflop2                          ; d_ff             ; work         ;
+;       |d_ff:flipflop3|            ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|rise_edge_detect:iKEY1|d_ff:flipflop3                          ; d_ff             ; work         ;
+;    |rise_edge_detect:iKEY2|       ; 1 (0)               ; 3 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|rise_edge_detect:iKEY2                                         ; rise_edge_detect ; work         ;
+;       |d_ff:flipflop1|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|rise_edge_detect:iKEY2|d_ff:flipflop1                          ; d_ff             ; work         ;
+;       |d_ff:flipflop2|            ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|rise_edge_detect:iKEY2|d_ff:flipflop2                          ; d_ff             ; work         ;
+;       |d_ff:flipflop3|            ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|rise_edge_detect:iKEY2|d_ff:flipflop3                          ; d_ff             ; work         ;
+;    |rise_edge_detect:iKEY3|       ; 2 (1)               ; 3 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|rise_edge_detect:iKEY3                                         ; rise_edge_detect ; work         ;
+;       |d_ff:flipflop1|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|rise_edge_detect:iKEY3|d_ff:flipflop1                          ; d_ff             ; work         ;
+;       |d_ff:flipflop2|            ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|rise_edge_detect:iKEY3|d_ff:flipflop2                          ; d_ff             ; work         ;
+;       |d_ff:flipflop3|            ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|rise_edge_detect:iKEY3|d_ff:flipflop3                          ; d_ff             ; work         ;
+;    |time_reg:iTR|                 ; 92 (17)             ; 53 (4)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR                                                   ; time_reg         ; work         ;
+;       |clkdiv4096:iTBf|           ; 13 (13)             ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|clkdiv4096:iTBf                                   ; clkdiv4096       ; work         ;
+;       |clkdiv:iTB|                ; 32 (0)              ; 19 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|clkdiv:iTB                                        ; clkdiv           ; work         ;
+;          |clkdivComb:clkdivcloud| ; 31 (22)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud                 ; clkdivComb       ; work         ;
+;             |FA:iFA[11]|          ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[11]      ; FA               ; work         ;
+;             |FA:iFA[14]|          ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[14]      ; FA               ; work         ;
+;             |FA:iFA[16]|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[16]      ; FA               ; work         ;
+;             |FA:iFA[3]|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[3]       ; FA               ; work         ;
+;             |FA:iFA[6]|           ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[6]       ; FA               ; work         ;
+;             |FA:iFA[8]|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[8]       ; FA               ; work         ;
+;          |d_ff:flipflop1[0]|      ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[0]                      ; d_ff             ; work         ;
+;          |d_ff:flipflop1[10]|     ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[10]                     ; d_ff             ; work         ;
+;          |d_ff:flipflop1[11]|     ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[11]                     ; d_ff             ; work         ;
+;          |d_ff:flipflop1[12]|     ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[12]                     ; d_ff             ; work         ;
+;          |d_ff:flipflop1[13]|     ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[13]                     ; d_ff             ; work         ;
+;          |d_ff:flipflop1[14]|     ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[14]                     ; d_ff             ; work         ;
+;          |d_ff:flipflop1[15]|     ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[15]                     ; d_ff             ; work         ;
+;          |d_ff:flipflop1[16]|     ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[16]                     ; d_ff             ; work         ;
+;          |d_ff:flipflop1[17]|     ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[17]                     ; d_ff             ; work         ;
+;          |d_ff:flipflop1[18]|     ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[18]                     ; d_ff             ; work         ;
+;          |d_ff:flipflop1[1]|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[1]                      ; d_ff             ; work         ;
+;          |d_ff:flipflop1[2]|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[2]                      ; d_ff             ; work         ;
+;          |d_ff:flipflop1[3]|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[3]                      ; d_ff             ; work         ;
+;          |d_ff:flipflop1[4]|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[4]                      ; d_ff             ; work         ;
+;          |d_ff:flipflop1[5]|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[5]                      ; d_ff             ; work         ;
+;          |d_ff:flipflop1[6]|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[6]                      ; d_ff             ; work         ;
+;          |d_ff:flipflop1[7]|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[7]                      ; d_ff             ; work         ;
+;          |d_ff:flipflop1[8]|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[8]                      ; d_ff             ; work         ;
+;          |d_ff:flipflop1[9]|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[9]                      ; d_ff             ; work         ;
+;       |div10:iHUND|               ; 6 (2)               ; 4 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iHUND                                       ; div10            ; work         ;
+;          |d_en_ff:ENflipflop1[0]| ; 1 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iHUND|d_en_ff:ENflipflop1[0]                ; d_en_ff          ; work         ;
+;             |d_ff:flipflop1|      ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iHUND|d_en_ff:ENflipflop1[0]|d_ff:flipflop1 ; d_ff             ; work         ;
+;          |d_en_ff:ENflipflop1[1]| ; 0 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iHUND|d_en_ff:ENflipflop1[1]                ; d_en_ff          ; work         ;
+;             |d_ff:flipflop1|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iHUND|d_en_ff:ENflipflop1[1]|d_ff:flipflop1 ; d_ff             ; work         ;
+;          |d_en_ff:ENflipflop1[2]| ; 0 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iHUND|d_en_ff:ENflipflop1[2]                ; d_en_ff          ; work         ;
+;             |d_ff:flipflop1|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iHUND|d_en_ff:ENflipflop1[2]|d_ff:flipflop1 ; d_ff             ; work         ;
+;          |d_en_ff:ENflipflop1[3]| ; 0 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iHUND|d_en_ff:ENflipflop1[3]                ; d_en_ff          ; work         ;
+;             |d_ff:flipflop1|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iHUND|d_en_ff:ENflipflop1[3]|d_ff:flipflop1 ; d_ff             ; work         ;
+;          |div10Comb:div10_comb|   ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iHUND|div10Comb:div10_comb                  ; div10Comb        ; work         ;
+;       |div10:iMIN|                ; 4 (0)               ; 4 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iMIN                                        ; div10            ; work         ;
+;          |d_en_ff:ENflipflop1[0]| ; 1 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iMIN|d_en_ff:ENflipflop1[0]                 ; d_en_ff          ; work         ;
+;             |d_ff:flipflop1|      ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iMIN|d_en_ff:ENflipflop1[0]|d_ff:flipflop1  ; d_ff             ; work         ;
+;          |d_en_ff:ENflipflop1[1]| ; 0 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iMIN|d_en_ff:ENflipflop1[1]                 ; d_en_ff          ; work         ;
+;             |d_ff:flipflop1|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iMIN|d_en_ff:ENflipflop1[1]|d_ff:flipflop1  ; d_ff             ; work         ;
+;          |d_en_ff:ENflipflop1[2]| ; 0 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iMIN|d_en_ff:ENflipflop1[2]                 ; d_en_ff          ; work         ;
+;             |d_ff:flipflop1|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iMIN|d_en_ff:ENflipflop1[2]|d_ff:flipflop1  ; d_ff             ; work         ;
+;          |d_en_ff:ENflipflop1[3]| ; 0 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iMIN|d_en_ff:ENflipflop1[3]                 ; d_en_ff          ; work         ;
+;             |d_ff:flipflop1|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iMIN|d_en_ff:ENflipflop1[3]|d_ff:flipflop1  ; d_ff             ; work         ;
+;          |div10Comb:div10_comb|   ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iMIN|div10Comb:div10_comb                   ; div10Comb        ; work         ;
+;       |div10:iSEC|                ; 6 (2)               ; 4 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iSEC                                        ; div10            ; work         ;
+;          |d_en_ff:ENflipflop1[0]| ; 1 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iSEC|d_en_ff:ENflipflop1[0]                 ; d_en_ff          ; work         ;
+;             |d_ff:flipflop1|      ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iSEC|d_en_ff:ENflipflop1[0]|d_ff:flipflop1  ; d_ff             ; work         ;
+;          |d_en_ff:ENflipflop1[1]| ; 0 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iSEC|d_en_ff:ENflipflop1[1]                 ; d_en_ff          ; work         ;
+;             |d_ff:flipflop1|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iSEC|d_en_ff:ENflipflop1[1]|d_ff:flipflop1  ; d_ff             ; work         ;
+;          |d_en_ff:ENflipflop1[2]| ; 0 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iSEC|d_en_ff:ENflipflop1[2]                 ; d_en_ff          ; work         ;
+;             |d_ff:flipflop1|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iSEC|d_en_ff:ENflipflop1[2]|d_ff:flipflop1  ; d_ff             ; work         ;
+;          |d_en_ff:ENflipflop1[3]| ; 0 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iSEC|d_en_ff:ENflipflop1[3]                 ; d_en_ff          ; work         ;
+;             |d_ff:flipflop1|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iSEC|d_en_ff:ENflipflop1[3]|d_ff:flipflop1  ; d_ff             ; work         ;
+;          |div10Comb:div10_comb|   ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iSEC|div10Comb:div10_comb                   ; div10Comb        ; work         ;
+;       |div10:iTEN|                ; 5 (1)               ; 4 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iTEN                                        ; div10            ; work         ;
+;          |d_en_ff:ENflipflop1[0]| ; 1 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iTEN|d_en_ff:ENflipflop1[0]                 ; d_en_ff          ; work         ;
+;             |d_ff:flipflop1|      ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iTEN|d_en_ff:ENflipflop1[0]|d_ff:flipflop1  ; d_ff             ; work         ;
+;          |d_en_ff:ENflipflop1[1]| ; 0 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iTEN|d_en_ff:ENflipflop1[1]                 ; d_en_ff          ; work         ;
+;             |d_ff:flipflop1|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iTEN|d_en_ff:ENflipflop1[1]|d_ff:flipflop1  ; d_ff             ; work         ;
+;          |d_en_ff:ENflipflop1[2]| ; 0 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iTEN|d_en_ff:ENflipflop1[2]                 ; d_en_ff          ; work         ;
+;             |d_ff:flipflop1|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iTEN|d_en_ff:ENflipflop1[2]|d_ff:flipflop1  ; d_ff             ; work         ;
+;          |d_en_ff:ENflipflop1[3]| ; 0 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iTEN|d_en_ff:ENflipflop1[3]                 ; d_en_ff          ; work         ;
+;             |d_ff:flipflop1|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iTEN|d_en_ff:ENflipflop1[3]|d_ff:flipflop1  ; d_ff             ; work         ;
+;          |div10Comb:div10_comb|   ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div10:iTEN|div10Comb:div10_comb                   ; div10Comb        ; work         ;
+;       |div3:iHR10|                ; 2 (0)               ; 2 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div3:iHR10                                        ; div3             ; work         ;
+;          |d_en_ff:ENflipflop1[0]| ; 1 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div3:iHR10|d_en_ff:ENflipflop1[0]                 ; d_en_ff          ; work         ;
+;             |d_ff:flipflop1|      ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div3:iHR10|d_en_ff:ENflipflop1[0]|d_ff:flipflop1  ; d_ff             ; work         ;
+;          |d_en_ff:ENflipflop1[1]| ; 1 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div3:iHR10|d_en_ff:ENflipflop1[1]                 ; d_en_ff          ; work         ;
+;             |d_ff:flipflop1|      ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div3:iHR10|d_en_ff:ENflipflop1[1]|d_ff:flipflop1  ; d_ff             ; work         ;
+;       |div6:iMIN10|               ; 4 (0)               ; 3 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div6:iMIN10                                       ; div6             ; work         ;
+;          |d_en_ff:ENflipflop1[0]| ; 1 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div6:iMIN10|d_en_ff:ENflipflop1[0]                ; d_en_ff          ; work         ;
+;             |d_ff:flipflop1|      ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div6:iMIN10|d_en_ff:ENflipflop1[0]|d_ff:flipflop1 ; d_ff             ; work         ;
+;          |d_en_ff:ENflipflop1[1]| ; 0 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div6:iMIN10|d_en_ff:ENflipflop1[1]                ; d_en_ff          ; work         ;
+;             |d_ff:flipflop1|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div6:iMIN10|d_en_ff:ENflipflop1[1]|d_ff:flipflop1 ; d_ff             ; work         ;
+;          |d_en_ff:ENflipflop1[2]| ; 1 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div6:iMIN10|d_en_ff:ENflipflop1[2]                ; d_en_ff          ; work         ;
+;             |d_ff:flipflop1|      ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div6:iMIN10|d_en_ff:ENflipflop1[2]|d_ff:flipflop1 ; d_ff             ; work         ;
+;          |div6Comb:div6_comb|     ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div6:iMIN10|div6Comb:div6_comb                    ; div6Comb         ; work         ;
+;       |div6:iSEC10|               ; 3 (0)               ; 3 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div6:iSEC10                                       ; div6             ; work         ;
+;          |d_en_ff:ENflipflop1[0]| ; 1 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div6:iSEC10|d_en_ff:ENflipflop1[0]                ; d_en_ff          ; work         ;
+;             |d_ff:flipflop1|      ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div6:iSEC10|d_en_ff:ENflipflop1[0]|d_ff:flipflop1 ; d_ff             ; work         ;
+;          |d_en_ff:ENflipflop1[1]| ; 0 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div6:iSEC10|d_en_ff:ENflipflop1[1]                ; d_en_ff          ; work         ;
+;             |d_ff:flipflop1|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div6:iSEC10|d_en_ff:ENflipflop1[1]|d_ff:flipflop1 ; d_ff             ; work         ;
+;          |d_en_ff:ENflipflop1[2]| ; 1 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div6:iSEC10|d_en_ff:ENflipflop1[2]                ; d_en_ff          ; work         ;
+;             |d_ff:flipflop1|      ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div6:iSEC10|d_en_ff:ENflipflop1[2]|d_ff:flipflop1 ; d_ff             ; work         ;
+;          |div6Comb:div6_comb|     ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AHW3|time_reg:iTR|div6:iSEC10|div6Comb:div6_comb                    ; div6Comb         ; work         ;
++-----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------+------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                         ;
++------------------------------------------------------------------+---------------------------------------------------------+
+; Register name                                                    ; Reason for Removal                                      ;
++------------------------------------------------------------------+---------------------------------------------------------+
+; time_reg:iTR|div3:iHR10|d_en_ff:ENflipflop1[2]|d_ff:flipflop1|Q  ; Stuck at GND due to stuck port data_in                  ;
+; time_reg:iTR|div3:iHR10|d_en_ff:ENflipflop1[3]|d_ff:flipflop1|Q  ; Stuck at GND due to stuck port data_in                  ;
+; time_reg:iTR|div6:iMIN10|d_en_ff:ENflipflop1[3]|d_ff:flipflop1|Q ; Stuck at GND due to stuck port data_in                  ;
+; time_reg:iTR|div6:iSEC10|d_en_ff:ENflipflop1[3]|d_ff:flipflop1|Q ; Stuck at GND due to stuck port data_in                  ;
+; time_reg:iTR|clkdiv4096:iTBf|divcnt[0]                           ; Merged with time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[0]|Q ;
+; Total Number of Removed Registers = 5                            ;                                                         ;
++------------------------------------------------------------------+---------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 65    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 65    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 20    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; rise_edge_detect:iKEY2|d_ff:flipflop3|Q ; 2       ;
+; rise_edge_detect:iKEY2|d_ff:flipflop2|Q ; 3       ;
+; rise_edge_detect:iKEY1|d_ff:flipflop3|Q ; 1       ;
+; rise_edge_detect:iKEY1|d_ff:flipflop2|Q ; 2       ;
+; rise_edge_detect:iKEY0|d_ff:flipflop3|Q ; 2       ;
+; rise_edge_detect:iKEY0|d_ff:flipflop2|Q ; 3       ;
+; rise_edge_detect:iKEY3|d_ff:flipflop3|Q ; 1       ;
+; rise_edge_detect:iKEY3|d_ff:flipflop2|Q ; 2       ;
+; rise_edge_detect:iKEY2|d_ff:flipflop1|Q ; 1       ;
+; rise_edge_detect:iKEY1|d_ff:flipflop1|Q ; 1       ;
+; rise_edge_detect:iKEY0|d_ff:flipflop1|Q ; 1       ;
+; rise_edge_detect:iKEY3|d_ff:flipflop1|Q ; 1       ;
+; Total number of inverted registers = 12 ;         ;
++-----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |AHW3|time_reg:iTR|hours[3] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|div3:iHR10|div3Comb:div3_comb|FA:incFA[3]"                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; B    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|div3:iHR10|div3Comb:div3_comb|FA:incFA[2]" ;
++------+-------+----------+----------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                  ;
++------+-------+----------+----------------------------------------------------------+
+; B    ; Input ; Info     ; Stuck at GND                                             ;
++------+-------+----------+----------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|div3:iHR10|div3Comb:div3_comb|FA:incFA[1]" ;
++------+-------+----------+----------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                  ;
++------+-------+----------+----------------------------------------------------------+
+; B    ; Input ; Info     ; Stuck at GND                                             ;
++------+-------+----------+----------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|div3:iHR10|div3Comb:div3_comb|FA:incFA[0]" ;
++------+-------+----------+----------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                  ;
++------+-------+----------+----------------------------------------------------------+
+; B    ; Input ; Info     ; Stuck at GND                                             ;
+; Cin  ; Input ; Info     ; Stuck at VCC                                             ;
++------+-------+----------+----------------------------------------------------------+
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|div3:iHR10"  ;
++---------+--------+----------+------------------------+
+; Port    ; Type   ; Severity ; Details                ;
++---------+--------+----------+------------------------+
+; inc_nxt ; Output ; Info     ; Explicitly unconnected ;
++---------+--------+----------+------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|div6:iSEC10|div6Comb:div6_comb|FA:iFA[3]"                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; B    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|div6:iSEC10|div6Comb:div6_comb|FA:iFA[2]" ;
++------+-------+----------+---------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                 ;
++------+-------+----------+---------------------------------------------------------+
+; B    ; Input ; Info     ; Stuck at GND                                            ;
++------+-------+----------+---------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|div6:iSEC10|div6Comb:div6_comb|FA:iFA[1]" ;
++------+-------+----------+---------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                 ;
++------+-------+----------+---------------------------------------------------------+
+; B    ; Input ; Info     ; Stuck at GND                                            ;
++------+-------+----------+---------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|div6:iSEC10|div6Comb:div6_comb|FA:iFA[0]" ;
++------+-------+----------+---------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                 ;
++------+-------+----------+---------------------------------------------------------+
+; B    ; Input ; Info     ; Stuck at GND                                            ;
+; Cin  ; Input ; Info     ; Stuck at VCC                                            ;
++------+-------+----------+---------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|div10:iHUND|d_en_ff:ENflipflop1[0]|d_ff:flipflop1" ;
++------+-------+----------+------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                          ;
++------+-------+----------+------------------------------------------------------------------+
+; PRN  ; Input ; Info     ; Stuck at VCC                                                     ;
++------+-------+----------+------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|div10:iHUND|div10Comb:div10_comb|FA:iFA[3]"                            ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; B    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|div10:iHUND|div10Comb:div10_comb|FA:iFA[2]" ;
++------+-------+----------+-----------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                   ;
++------+-------+----------+-----------------------------------------------------------+
+; B    ; Input ; Info     ; Stuck at GND                                              ;
++------+-------+----------+-----------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|div10:iHUND|div10Comb:div10_comb|FA:iFA[1]" ;
++------+-------+----------+-----------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                   ;
++------+-------+----------+-----------------------------------------------------------+
+; B    ; Input ; Info     ; Stuck at GND                                              ;
++------+-------+----------+-----------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|div10:iHUND|div10Comb:div10_comb|FA:iFA[0]" ;
++------+-------+----------+-----------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                   ;
++------+-------+----------+-----------------------------------------------------------+
+; B    ; Input ; Info     ; Stuck at GND                                              ;
+; Cin  ; Input ; Info     ; Stuck at VCC                                              ;
++------+-------+----------+-----------------------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[18]" ;
++------+-------+----------+----------------------------------------------+
+; Port ; Type  ; Severity ; Details                                      ;
++------+-------+----------+----------------------------------------------+
+; PRN  ; Input ; Info     ; Stuck at VCC                                 ;
++------+-------+----------+----------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[17]" ;
++------+-------+----------+----------------------------------------------+
+; Port ; Type  ; Severity ; Details                                      ;
++------+-------+----------+----------------------------------------------+
+; PRN  ; Input ; Info     ; Stuck at VCC                                 ;
++------+-------+----------+----------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[16]" ;
++------+-------+----------+----------------------------------------------+
+; Port ; Type  ; Severity ; Details                                      ;
++------+-------+----------+----------------------------------------------+
+; PRN  ; Input ; Info     ; Stuck at VCC                                 ;
++------+-------+----------+----------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[15]" ;
++------+-------+----------+----------------------------------------------+
+; Port ; Type  ; Severity ; Details                                      ;
++------+-------+----------+----------------------------------------------+
+; PRN  ; Input ; Info     ; Stuck at VCC                                 ;
++------+-------+----------+----------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[14]" ;
++------+-------+----------+----------------------------------------------+
+; Port ; Type  ; Severity ; Details                                      ;
++------+-------+----------+----------------------------------------------+
+; PRN  ; Input ; Info     ; Stuck at VCC                                 ;
++------+-------+----------+----------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[13]" ;
++------+-------+----------+----------------------------------------------+
+; Port ; Type  ; Severity ; Details                                      ;
++------+-------+----------+----------------------------------------------+
+; PRN  ; Input ; Info     ; Stuck at VCC                                 ;
++------+-------+----------+----------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[12]" ;
++------+-------+----------+----------------------------------------------+
+; Port ; Type  ; Severity ; Details                                      ;
++------+-------+----------+----------------------------------------------+
+; PRN  ; Input ; Info     ; Stuck at VCC                                 ;
++------+-------+----------+----------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[11]" ;
++------+-------+----------+----------------------------------------------+
+; Port ; Type  ; Severity ; Details                                      ;
++------+-------+----------+----------------------------------------------+
+; PRN  ; Input ; Info     ; Stuck at VCC                                 ;
++------+-------+----------+----------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[10]" ;
++------+-------+----------+----------------------------------------------+
+; Port ; Type  ; Severity ; Details                                      ;
++------+-------+----------+----------------------------------------------+
+; PRN  ; Input ; Info     ; Stuck at VCC                                 ;
++------+-------+----------+----------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[9]" ;
++------+-------+----------+---------------------------------------------+
+; Port ; Type  ; Severity ; Details                                     ;
++------+-------+----------+---------------------------------------------+
+; PRN  ; Input ; Info     ; Stuck at VCC                                ;
++------+-------+----------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[8]" ;
++------+-------+----------+---------------------------------------------+
+; Port ; Type  ; Severity ; Details                                     ;
++------+-------+----------+---------------------------------------------+
+; PRN  ; Input ; Info     ; Stuck at VCC                                ;
++------+-------+----------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[7]" ;
++------+-------+----------+---------------------------------------------+
+; Port ; Type  ; Severity ; Details                                     ;
++------+-------+----------+---------------------------------------------+
+; PRN  ; Input ; Info     ; Stuck at VCC                                ;
++------+-------+----------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[6]" ;
++------+-------+----------+---------------------------------------------+
+; Port ; Type  ; Severity ; Details                                     ;
++------+-------+----------+---------------------------------------------+
+; PRN  ; Input ; Info     ; Stuck at VCC                                ;
++------+-------+----------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[5]" ;
++------+-------+----------+---------------------------------------------+
+; Port ; Type  ; Severity ; Details                                     ;
++------+-------+----------+---------------------------------------------+
+; PRN  ; Input ; Info     ; Stuck at VCC                                ;
++------+-------+----------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[4]" ;
++------+-------+----------+---------------------------------------------+
+; Port ; Type  ; Severity ; Details                                     ;
++------+-------+----------+---------------------------------------------+
+; PRN  ; Input ; Info     ; Stuck at VCC                                ;
++------+-------+----------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[3]" ;
++------+-------+----------+---------------------------------------------+
+; Port ; Type  ; Severity ; Details                                     ;
++------+-------+----------+---------------------------------------------+
+; PRN  ; Input ; Info     ; Stuck at VCC                                ;
++------+-------+----------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[2]" ;
++------+-------+----------+---------------------------------------------+
+; Port ; Type  ; Severity ; Details                                     ;
++------+-------+----------+---------------------------------------------+
+; PRN  ; Input ; Info     ; Stuck at VCC                                ;
++------+-------+----------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[1]" ;
++------+-------+----------+---------------------------------------------+
+; Port ; Type  ; Severity ; Details                                     ;
++------+-------+----------+---------------------------------------------+
+; PRN  ; Input ; Info     ; Stuck at VCC                                ;
++------+-------+----------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|d_ff:flipflop1[0]" ;
++------+-------+----------+---------------------------------------------+
+; Port ; Type  ; Severity ; Details                                     ;
++------+-------+----------+---------------------------------------------+
+; PRN  ; Input ; Info     ; Stuck at VCC                                ;
++------+-------+----------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[18]"                          ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; B    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[17]" ;
++------+-------+----------+-------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                     ;
++------+-------+----------+-------------------------------------------------------------+
+; B    ; Input ; Info     ; Stuck at GND                                                ;
++------+-------+----------+-------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[16]" ;
++------+-------+----------+-------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                     ;
++------+-------+----------+-------------------------------------------------------------+
+; B    ; Input ; Info     ; Stuck at GND                                                ;
++------+-------+----------+-------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[15]" ;
++------+-------+----------+-------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                     ;
++------+-------+----------+-------------------------------------------------------------+
+; B    ; Input ; Info     ; Stuck at GND                                                ;
++------+-------+----------+-------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[14]" ;
++------+-------+----------+-------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                     ;
++------+-------+----------+-------------------------------------------------------------+
+; B    ; Input ; Info     ; Stuck at GND                                                ;
++------+-------+----------+-------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[13]" ;
++------+-------+----------+-------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                     ;
++------+-------+----------+-------------------------------------------------------------+
+; B    ; Input ; Info     ; Stuck at GND                                                ;
++------+-------+----------+-------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[12]" ;
++------+-------+----------+-------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                     ;
++------+-------+----------+-------------------------------------------------------------+
+; B    ; Input ; Info     ; Stuck at GND                                                ;
++------+-------+----------+-------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[11]" ;
++------+-------+----------+-------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                     ;
++------+-------+----------+-------------------------------------------------------------+
+; B    ; Input ; Info     ; Stuck at GND                                                ;
++------+-------+----------+-------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[10]" ;
++------+-------+----------+-------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                     ;
++------+-------+----------+-------------------------------------------------------------+
+; B    ; Input ; Info     ; Stuck at GND                                                ;
++------+-------+----------+-------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[9]" ;
++------+-------+----------+------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                    ;
++------+-------+----------+------------------------------------------------------------+
+; B    ; Input ; Info     ; Stuck at GND                                               ;
++------+-------+----------+------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[8]" ;
++------+-------+----------+------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                    ;
++------+-------+----------+------------------------------------------------------------+
+; B    ; Input ; Info     ; Stuck at GND                                               ;
++------+-------+----------+------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[7]" ;
++------+-------+----------+------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                    ;
++------+-------+----------+------------------------------------------------------------+
+; B    ; Input ; Info     ; Stuck at GND                                               ;
++------+-------+----------+------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[6]" ;
++------+-------+----------+------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                    ;
++------+-------+----------+------------------------------------------------------------+
+; B    ; Input ; Info     ; Stuck at GND                                               ;
++------+-------+----------+------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[5]" ;
++------+-------+----------+------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                    ;
++------+-------+----------+------------------------------------------------------------+
+; B    ; Input ; Info     ; Stuck at GND                                               ;
++------+-------+----------+------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[4]" ;
++------+-------+----------+------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                    ;
++------+-------+----------+------------------------------------------------------------+
+; B    ; Input ; Info     ; Stuck at GND                                               ;
++------+-------+----------+------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[3]" ;
++------+-------+----------+------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                    ;
++------+-------+----------+------------------------------------------------------------+
+; B    ; Input ; Info     ; Stuck at GND                                               ;
++------+-------+----------+------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[2]" ;
++------+-------+----------+------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                    ;
++------+-------+----------+------------------------------------------------------------+
+; B    ; Input ; Info     ; Stuck at GND                                               ;
++------+-------+----------+------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[1]" ;
++------+-------+----------+------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                    ;
++------+-------+----------+------------------------------------------------------------+
+; B    ; Input ; Info     ; Stuck at GND                                               ;
++------+-------+----------+------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[0]" ;
++------+-------+----------+------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                    ;
++------+-------+----------+------------------------------------------------------------+
+; B    ; Input ; Info     ; Stuck at GND                                               ;
+; Cin  ; Input ; Info     ; Stuck at VCC                                               ;
++------+-------+----------+------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "time_reg:iTR"                                                                                                   ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                                                  ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; enable      ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; hundrethSec ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "rise_edge_detect:iKEY0|d_ff:flipflop3" ;
++------+-------+----------+-----------------------------------------+
+; Port ; Type  ; Severity ; Details                                 ;
++------+-------+----------+-----------------------------------------+
+; CLRN ; Input ; Info     ; Stuck at VCC                            ;
++------+-------+----------+-----------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "rise_edge_detect:iKEY0|d_ff:flipflop2" ;
++------+-------+----------+-----------------------------------------+
+; Port ; Type  ; Severity ; Details                                 ;
++------+-------+----------+-----------------------------------------+
+; CLRN ; Input ; Info     ; Stuck at VCC                            ;
++------+-------+----------+-----------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "rise_edge_detect:iKEY0|d_ff:flipflop1" ;
++------+-------+----------+-----------------------------------------+
+; Port ; Type  ; Severity ; Details                                 ;
++------+-------+----------+-----------------------------------------+
+; CLRN ; Input ; Info     ; Stuck at VCC                            ;
++------+-------+----------+-----------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 97                          ;
+; cycloneiii_ff         ; 65                          ;
+;     CLR               ; 45                          ;
+;     ENA CLR           ; 20                          ;
+; cycloneiii_lcell_comb ; 156                         ;
+;     arith             ; 5                           ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 1                           ;
+;     normal            ; 151                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 18                          ;
+;         2 data inputs ; 18                          ;
+;         3 data inputs ; 52                          ;
+;         4 data inputs ; 62                          ;
+;                       ;                             ;
+; Max LUT depth         ; 11.00                       ;
+; Average LUT depth     ; 4.01                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+    Info: Processing started: Thu Nov  2 14:35:57 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off AHW3 -c AHW3
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file fa.sv
+    Info (12023): Found entity 1: FA File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/FA.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file rise_edge_detect_tb.sv
+    Info (12023): Found entity 1: rise_edge_detect_tb File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/rise_edge_detect_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file d_en_ff_tb.sv
+    Info (12023): Found entity 1: d_en_ff_tb File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/d_en_ff_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ahw3.sv
+    Info (12023): Found entity 1: AHW3 File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file time_reg.sv
+    Info (12023): Found entity 1: time_reg File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/time_reg.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file seggdec.sv
+    Info (12023): Found entity 1: segGdec File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/segGdec.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file segfdec.sv
+    Info (12023): Found entity 1: segFdec File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/segFdec.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file segedec.sv
+    Info (12023): Found entity 1: segEdec File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/segEdec.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file segddec.sv
+    Info (12023): Found entity 1: segDdec File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/segDdec.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file segcdec.sv
+    Info (12023): Found entity 1: segCdec File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/segCdec.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file segbdec.sv
+    Info (12023): Found entity 1: segBdec File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/segBdec.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file segadec.sv
+    Info (12023): Found entity 1: segAdec File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/segAdec.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file rise_edge_detect.sv
+    Info (12023): Found entity 1: rise_edge_detect File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/rise_edge_detect.sv Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file div10comb_tb.sv
+    Info (12023): Found entity 1: div10Comb_tb File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/div10Comb_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file div10comb.sv
+    Info (12023): Found entity 1: div10Comb File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/div10Comb.sv Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file div10_tb.sv
+    Info (12023): Found entity 1: div10_tb File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/div10_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file div10.sv
+    Info (12023): Found entity 1: div10 File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/div10.sv Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file div6comb_tb.sv
+    Info (12023): Found entity 1: div6Comb_tb File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/div6Comb_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file div6comb.sv
+    Info (12023): Found entity 1: div6Comb File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/div6Comb.sv Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file div6_tb.sv
+    Info (12023): Found entity 1: div6_tb File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/div6_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file div6.sv
+    Info (12023): Found entity 1: div6 File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/div6.sv Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file div3comb_tb.sv
+    Info (12023): Found entity 1: div3Comb_tb File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/div3Comb_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file div3comb.sv
+    Info (12023): Found entity 1: div3Comb File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/div3Comb.sv Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file div3_tb.sv
+    Info (12023): Found entity 1: div3_tb File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/div3_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file div3.sv
+    Info (12023): Found entity 1: div3 File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/div3.sv Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file d_ff.sv
+    Info (12023): Found entity 1: d_ff File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/d_ff.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file d_en_ff.sv
+    Info (12023): Found entity 1: d_en_ff File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/d_en_ff.sv Line: 7
+Warning (12019): Can't analyze file -- file clkdivComb_tb.sv is missing
+Info (12021): Found 1 design units, including 1 entities, in source file clkdivcomb.sv
+    Info (12023): Found entity 1: clkdivComb File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/clkdivComb.sv Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file clkdiv4096.sv
+    Info (12023): Found entity 1: clkdiv4096 File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/clkdiv4096.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file clkdiv_tb.sv
+    Info (12023): Found entity 1: clkdiv_tb File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/clkdiv_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file clkdiv.sv
+    Info (12023): Found entity 1: clkdiv File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/clkdiv.sv Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file bcd7seg.sv
+    Info (12023): Found entity 1: bcd7seg File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/bcd7seg.sv Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at d_en_ff.sv(24): created implicit net for "EN_Mux" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/d_en_ff.sv Line: 24
+Info (12127): Elaborating entity "AHW3" for the top level hierarchy
+Info (12128): Elaborating entity "rise_edge_detect" for hierarchy "rise_edge_detect:iKEY0" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 29
+Info (12128): Elaborating entity "d_ff" for hierarchy "rise_edge_detect:iKEY0|d_ff:flipflop1" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/rise_edge_detect.sv Line: 27
+Info (12128): Elaborating entity "time_reg" for hierarchy "time_reg:iTR" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 41
+Warning (10230): Verilog HDL assignment warning at time_reg.sv(95): truncated value with size 32 to match size of target (4) File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/time_reg.sv Line: 95
+Info (12128): Elaborating entity "clkdiv" for hierarchy "time_reg:iTR|clkdiv:iTB" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/time_reg.sv Line: 34
+Info (12128): Elaborating entity "clkdivComb" for hierarchy "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/clkdiv.sv Line: 23
+Info (12128): Elaborating entity "FA" for hierarchy "time_reg:iTR|clkdiv:iTB|clkdivComb:clkdivcloud|FA:iFA[0]" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/clkdivComb.sv Line: 36
+Info (12128): Elaborating entity "clkdiv4096" for hierarchy "time_reg:iTR|clkdiv4096:iTBf" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/time_reg.sv Line: 39
+Warning (10230): Verilog HDL assignment warning at clkdiv4096.sv(22): truncated value with size 32 to match size of target (7) File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/clkdiv4096.sv Line: 22
+Info (12128): Elaborating entity "div10" for hierarchy "time_reg:iTR|div10:iHUND" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/time_reg.sv Line: 49
+Info (12128): Elaborating entity "div10Comb" for hierarchy "time_reg:iTR|div10:iHUND|div10Comb:div10_comb" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/div10.sv Line: 28
+Info (12128): Elaborating entity "d_en_ff" for hierarchy "time_reg:iTR|div10:iHUND|d_en_ff:ENflipflop1[0]" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/div10.sv Line: 39
+Info (12128): Elaborating entity "div6" for hierarchy "time_reg:iTR|div6:iSEC10" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/time_reg.sv Line: 67
+Info (12128): Elaborating entity "div6Comb" for hierarchy "time_reg:iTR|div6:iSEC10|div6Comb:div6_comb" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/div6.sv Line: 28
+Info (12128): Elaborating entity "div3" for hierarchy "time_reg:iTR|div3:iHR10" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/time_reg.sv Line: 104
+Info (12128): Elaborating entity "div3Comb" for hierarchy "time_reg:iTR|div3:iHR10|div3Comb:div3_comb" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/div3.sv Line: 28
+Info (12128): Elaborating entity "bcd7seg" for hierarchy "bcd7seg:iBCD7" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 46
+Info (12128): Elaborating entity "segAdec" for hierarchy "bcd7seg:iBCD7|segAdec:iA" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/bcd7seg.sv Line: 9
+Info (12128): Elaborating entity "segBdec" for hierarchy "bcd7seg:iBCD7|segBdec:iB" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/bcd7seg.sv Line: 10
+Info (12128): Elaborating entity "segCdec" for hierarchy "bcd7seg:iBCD7|segCdec:iC" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/bcd7seg.sv Line: 11
+Info (12128): Elaborating entity "segDdec" for hierarchy "bcd7seg:iBCD7|segDdec:iD" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/bcd7seg.sv Line: 12
+Info (12128): Elaborating entity "segEdec" for hierarchy "bcd7seg:iBCD7|segEdec:iE" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/bcd7seg.sv Line: 13
+Info (12128): Elaborating entity "segFdec" for hierarchy "bcd7seg:iBCD7|segFdec:iF" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/bcd7seg.sv Line: 14
+Warning (10873): Using initial value X (don't care) for net "truth_table[10..15]" at segFdec.sv(9) File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/segFdec.sv Line: 9
+Info (12128): Elaborating entity "segGdec" for hierarchy "bcd7seg:iBCD7|segGdec:iG" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/bcd7seg.sv Line: 15
+Warning (10873): Using initial value X (don't care) for net "truth_table[10..15]" at segGdec.sv(9) File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/segGdec.sv Line: 9
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13000): Registers with preset signals will power-up high File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/d_ff.sv Line: 7
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 6
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 6
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 6
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 6
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 6
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 6
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 6
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 6
+    Warning (13410): Pin "LEDR[10]" is stuck at GND File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 6
+    Warning (13410): Pin "LEDR[11]" is stuck at GND File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 6
+    Warning (13410): Pin "LEDR[12]" is stuck at GND File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 6
+    Warning (13410): Pin "LEDR[13]" is stuck at GND File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 6
+    Warning (13410): Pin "LEDR[14]" is stuck at GND File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 6
+    Warning (13410): Pin "LEDR[15]" is stuck at GND File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 6
+    Warning (13410): Pin "HR10[1]" is stuck at GND File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 7
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 14 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 4
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 4
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 4
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 4
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 4
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 4
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 4
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 4
+    Warning (15610): No output dependent on input pin "SW[10]" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 4
+    Warning (15610): No output dependent on input pin "SW[11]" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 4
+    Warning (15610): No output dependent on input pin "SW[12]" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 4
+    Warning (15610): No output dependent on input pin "SW[13]" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 4
+    Warning (15610): No output dependent on input pin "SW[14]" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 4
+    Warning (15610): No output dependent on input pin "SW[15]" File: C:/Users/mattf/OneDrive/Documents/ECE 352/AHW3/AHW3_completed/AHW3.sv Line: 4
+Info (21057): Implemented 254 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 23 input pins
+    Info (21059): Implemented 74 output pins
+    Info (21061): Implemented 157 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 39 warnings
+    Info: Peak virtual memory: 4849 megabytes
+    Info: Processing ended: Thu Nov  2 14:36:11 2023
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:12
+
+
